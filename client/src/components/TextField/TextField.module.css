@@ -1,0 +1,11 @@
+.textField {
+  width: 100%;
+  padding: var(--spacing-xs);
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 0;
+}
+.textField::placeholder {
+  font-family: var(--typography-primary);
+}

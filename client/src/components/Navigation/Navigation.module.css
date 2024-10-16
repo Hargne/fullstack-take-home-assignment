@@ -1,0 +1,36 @@
+.logo {
+  width: 2rem;
+  height: auto;
+}
+
+.tablist {
+  display: flex;
+  margin: var(--spacing-md) 0;
+  padding: 0;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.tablist button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.2rem solid;
+  border-color: transparent;
+  display: block;
+  color: var(--text-secondary-color);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: var(--spacing-xs) 0;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.tablist button:hover {
+  color: var(--text-primary-color);
+}
+
+.tablist button.active {
+  color: var(--text-primary-color);
+  border-color: var(--primary-color);
+}

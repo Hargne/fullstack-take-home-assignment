@@ -1,0 +1,12 @@
+.trackList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trackList li {
+  border-bottom: 1px solid var(--panel-color);
+}
+.trackList li:last-child {
+  border-bottom: none;
+}

@@ -1,0 +1,41 @@
+.actionButton {
+  background: none;
+  padding: var(--spacing-xs);
+  color: var(--text-primary-color);
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.actionButton.default {
+  background: var(--panel-color);
+}
+.actionButton.default:hover,
+.actionButton.default.active {
+  background: var(--primary-color);
+}
+
+.actionButton.no-background.inverted {
+  color: var(--background-color);
+}
+.actionButton.no-background:hover,
+.actionButton.no-background.active {
+  background: var(--panel-color);
+}
+
+.inverted.default {
+  background: var(--text-primary-color);
+  color: var(--background-color);
+}
+.inverted.default:hover,
+.inverted.default.active {
+  background: var(--text-primary-color);
+  color: var(--background-color);
+}
+
+.inverted.no-background:hover,
+.inverted.no-background.active {
+  background: var(--text-primary-color);
+  color: var(--background-color);
+}

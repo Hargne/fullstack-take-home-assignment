@@ -1,0 +1,39 @@
+.icon {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  color: "inherit";
+  vertical-align: middle;
+  position: relative;
+}
+
+.small {
+  width: 1.5em;
+  height: 1.5em;
+}
+.small.indent-right {
+  left: 0.25em;
+}
+.small.indent-left {
+  right: 0.25em;
+}
+.medium {
+  width: 2em;
+  height: 2em;
+}
+.medium.indent-right {
+  left: 0.5em;
+}
+.medium.indent-left {
+  right: 0.5em;
+}
+.large {
+  width: 2.5em;
+  height: 2.5em;
+}
+.large.indent-right {
+  left: 0.75em;
+}
+.large.indent-left {
+  right: 0.75em;
+}

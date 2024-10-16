@@ -1,0 +1,109 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.playlists {
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.playlistHeader {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  width: 100%;
+  background: var(--panel-color);
+  border: 0.1rem solid;
+  border-color: var(--panel-color);
+  color: var(--text-primary-color);
+  gap: var(--spacing-sm);
+  box-sizing: border-box;
+}
+.playlistHeader.open {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+.playlistHeader:hover,
+.playlistHeader:focus {
+  background: var(--panel-color);
+  border-color: var(--text-primary-color);
+}
+.playlistHeader:focus {
+  outline: none;
+}
+.playlistHeader h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.playlistHeader .trackLength {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary-color);
+  flex: 1;
+}
+
+.playlistContent {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: var(--panel-color);
+}
+
+.playlistContent ul {
+  list-style-type: none;
+  padding: 0 var(--spacing-sm);
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.playlistDetailsBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  border-top: 1px solid var(--panel-color);
+  padding: var(--spacing-sm) var(--spacing-xs);
+  box-sizing: border-box;
+  color: var(--text-secondary-color);
+  font-size: 0.85rem;
+}
+
+.emptyPlaylist {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: var(--text-primary-color);
+  padding: var(--spacing-md);
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+.centered {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: var(--text-primary-color);
+  font-size: 1.2rem;
+  padding: var(--spacing-md);
+}

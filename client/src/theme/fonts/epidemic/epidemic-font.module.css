@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Epidemic";
+  font-weight: 500;
+  font-display: swap;
+  src: url("./Epidemic-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Epidemic";
+  font-weight: 600;
+  font-display: swap;
+  src: url("./Epidemic-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Epidemic";
+  font-weight: 700;
+  font-display: swap;
+  src: url("./Epidemic-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Epidemic";
+  font-weight: 500;
+  font-display: swap;
+  src: url("h./Epidemic-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Epidemic";
+  font-weight: 600;
+  font-display: swap;
+  src: url("./Epidemic-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Epidemic";
+  font-weight: 700;
+  font-display: swap;
+  src: url("./Epidemic-Bold.woff2") format("woff2");
+}

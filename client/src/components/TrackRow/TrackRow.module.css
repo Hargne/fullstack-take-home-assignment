@@ -1,0 +1,84 @@
+.track {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  height: 5rem;
+  border-bottom: 1px solid var(--panel-color);
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+.track:last-child {
+  border-bottom: none;
+}
+
+.midSection {
+  flex-grow: 1;
+  display: flex;
+  width: 100%;
+  gap: var(--spacing-xs);
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+.trackInfo.withSlider {
+  align-items: center;
+  text-align: center;
+}
+
+.trackTitle {
+  color: var(--text-primary-color);
+  font-weight: 700;
+}
+.trackTitle.bright {
+  color: var(--background-color);
+}
+
+.trackArtist {
+  color: var(--text-secondary-color);
+  font-weight: 300;
+}
+.trackArtist.bright {
+  color: var(--background-color);
+}
+
+.playbackProgressSlider {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .midSection {
+    flex-direction: row;
+    gap: var(--spacing-sm);
+  }
+
+  .trackInfo {
+    font-size: 1rem;
+  }
+
+  .trackInfo.withSlider {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: column;
+    gap: 0;
+    min-width: 10rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .trackInfo.withSlider {
+    font-size: 1rem;
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: column;
+    gap: 0;
+    min-width: 12.5rem;
+  }
+}

@@ -1,0 +1,25 @@
+.button {
+  background-color: var(--success-color);
+  border: none;
+  color: var(--background-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  font-weight: 1rem;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+}
+
+.button.success {
+  background-color: var(--success-color);
+  color: var(--background-color);
+  fill: var(--background-color);
+}
+.button.error {
+  background-color: var(--error-color);
+  color: var(--text-primary-color);
+  fill: var(--text-primary-color);
+}

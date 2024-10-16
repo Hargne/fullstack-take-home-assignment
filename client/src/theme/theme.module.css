@@ -1,0 +1,35 @@
+@import url("./fonts/epidemic/epidemic-font.module.css");
+
+:root {
+  --primary-color: #ff82c2;
+  --primary-color-hover: #ff6aa7;
+  --background-color: #000;
+  --text-primary-color: #fff;
+  --text-secondary-color: #9e9e9e;
+  --panel-color: #333;
+  --panel-color-hover: #444;
+  --success-color: #5ad363;
+  --error-color: #ff4d4d;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  --border-radius: 4px;
+  --typography-primary: "Epidemic", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--typography-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
