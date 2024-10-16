@@ -23,13 +23,15 @@ export default function Playlist(props: Props) {
 
   function renderDeleteButton() {
     return (
-      <Button
-        variant="error"
-        onClick={handleDelete}
-        aria-label="Delete playlist"
-      >
-        <Icon variant="remove" size="small" fill="inherit" /> Delete playlist
-      </Button>
+      <div>
+        <Button
+          variant="error"
+          onClick={handleDelete}
+          aria-label="Delete playlist"
+        >
+          <Icon variant="remove" size="small" fill="inherit" /> Delete playlist
+        </Button>
+      </div>
     );
   }
 
@@ -53,7 +55,7 @@ export default function Playlist(props: Props) {
         <div className={styles.playlistContent}>
           {props.playlist.tracks.length === 0 ? (
             <div className={styles.emptyPlaylist}>
-              This playlist is empty :(
+              This playlist is empty
               {renderDeleteButton()}
             </div>
           ) : (

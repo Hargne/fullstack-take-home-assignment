@@ -1,6 +1,7 @@
-import { createContext, PropsWithChildren, useMemo, useState } from "react";
+import { createContext, PropsWithChildren, useMemo } from "react";
 import { PlaylistProps, TrackProps } from "~/@types";
 import { PlaylistContextProps } from "./PlaylistProvider.types";
+import useLocalStorageState from "~/hooks/useLocalStorage";
 
 export const PlaylistContext = createContext<PlaylistContextProps>(
   {} as PlaylistContextProps
@@ -9,14 +10,17 @@ export const PlaylistContext = createContext<PlaylistContextProps>(
 export function PlaylistProvider({
   children,
 }: Readonly<PropsWithChildren<{}>>) {
-  const [playlists, setPlaylists] = useState<Array<PlaylistProps>>([
-    {
-      id: "1337",
-      title: "My First Playlist",
-      description: "This is your new playlist",
-      tracks: [],
-    },
-  ]);
+  const [playlists, setPlaylists] = useLocalStorageState<Array<PlaylistProps>>(
+    "playlists",
+    [
+      {
+        id: "1337",
+        title: "My First Playlist",
+        description: "This is your new playlist",
+        tracks: [],
+      },
+    ]
+  );
 
   function createPlaylist(data: Omit<PlaylistProps, "id">) {
     const id = Math.random().toString(36).slice(2, 9);

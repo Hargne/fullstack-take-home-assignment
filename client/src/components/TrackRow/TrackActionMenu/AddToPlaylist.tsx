@@ -52,19 +52,18 @@ const AddToPlaylist = forwardRef<HTMLUListElement, TrackActionMenuItemProps>(
         ))}
         <li className={styles.divider} aria-label="divider" />
         <TrackActionMenuItem
-          label="Create new playlist"
+          label="New playlist"
           icon={showCreatePlaylist ? "chevronUp" : "chevronDown"}
           onClick={toggleShowCreatePlaylist}
         />
-        <TrackActionMenuItem
-          label="New playlist form"
-          hidden={!showCreatePlaylist}
-        >
-          <CreatePlaylistForm
-            tracks={[props.track]}
-            onComplete={() => setShowCreatePlaylist(false)}
-          />
-        </TrackActionMenuItem>
+        {showCreatePlaylist && (
+          <TrackActionMenuItem label="New playlist form">
+            <CreatePlaylistForm
+              tracks={[props.track]}
+              onComplete={() => setShowCreatePlaylist(false)}
+            />
+          </TrackActionMenuItem>
+        )}
       </ul>
     );
   }

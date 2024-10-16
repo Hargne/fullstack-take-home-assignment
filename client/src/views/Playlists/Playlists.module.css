@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
 }
 
 .playlists {
@@ -57,6 +57,7 @@
   box-sizing: border-box;
   border: 1px solid;
   border-color: var(--panel-color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .playlistContent ul {
@@ -75,8 +76,7 @@
   align-items: center;
   width: 100%;
   justify-content: flex-end;
-  border-top: 1px solid var(--panel-color);
-  padding: var(--spacing-sm) var(--spacing-xs);
+  padding: var(--spacing-sm);
   box-sizing: border-box;
   color: var(--text-secondary-color);
   font-size: 0.85rem;
@@ -91,7 +91,7 @@
   height: 100%;
   width: 100%;
   color: var(--text-primary-color);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   box-sizing: border-box;
   font-size: 1.2rem;
 }
@@ -106,4 +106,5 @@
   color: var(--text-primary-color);
   font-size: 1.2rem;
   padding: var(--spacing-md);
+  box-sizing: border-box;
 }

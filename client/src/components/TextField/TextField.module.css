@@ -1,6 +1,6 @@
 .textField {
   width: 100%;
-  padding: var(--spacing-xs);
+  padding: var(--spacing-sm);
   font-size: 1rem;
   box-sizing: border-box;
   border-radius: var(--border-radius);

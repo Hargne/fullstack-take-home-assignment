@@ -35,7 +35,7 @@ describe("Playlists View", () => {
     await userEvent.click(
       within(firstPlaylist).getByRole("button", { name: "Toggle playlist" })
     );
-    expect(screen.getByText("This playlist is empty :(")).toBeInTheDocument();
+    expect(screen.getByText("This playlist is empty")).toBeInTheDocument();
 
     // Open the second playlist and make sure that there are tracks
     const secondPlaylist = screen.getByRole("listitem", {

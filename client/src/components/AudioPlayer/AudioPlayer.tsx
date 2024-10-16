@@ -6,7 +6,7 @@ type Props = TrackRowProps;
 export default function AudioPlayer(props: Props) {
   return (
     <div className={styles.audioPlayer} role="region" aria-label="Audio Player">
-      <TrackRow {...props} brightBackground menuDirection="top" />
+      <TrackRow {...props} bright menuDirection="top" />
     </div>
   );
 }

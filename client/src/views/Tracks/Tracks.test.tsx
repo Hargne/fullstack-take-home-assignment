@@ -189,6 +189,8 @@ describe("Tracks View", () => {
       ).toBeInTheDocument();
     });
 
+    await userEvent.click(screen.getByRole("link", { name: "New playlist" }));
+
     // Enter a playlist name
     await userEvent.click(
       screen.getByRole("textbox", { name: "Playlist name" })

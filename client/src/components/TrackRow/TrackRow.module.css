@@ -36,16 +36,10 @@
   color: var(--text-primary-color);
   font-weight: 700;
 }
-.trackTitle.bright {
-  color: var(--background-color);
-}
 
 .trackArtist {
   color: var(--text-secondary-color);
   font-weight: 300;
-}
-.trackArtist.bright {
-  color: var(--background-color);
 }
 
 .playbackProgressSlider {

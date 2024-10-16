@@ -11,7 +11,7 @@ export type TrackRowProps = {
   onTogglePlayback: (track: TrackProps) => void;
   playbackProgress?: number;
   onSetPlaybackPosition?: (progress: number) => void;
-  brightBackground?: boolean;
+  bright?: boolean;
   menuDirection?: "top" | "bottom";
   playlist?: PlaylistProps;
 };
@@ -52,7 +52,7 @@ export default function TrackRow(props: Readonly<TrackRowProps>) {
           props.isPlaying ? "Pause track" : `Play ${props.track.title}`
         }
         active={props.isPlaying}
-        inverted={props.brightBackground}
+        inverted={props.bright}
       />
       <div className={styles.midSection}>
         <div
@@ -60,18 +60,8 @@ export default function TrackRow(props: Readonly<TrackRowProps>) {
             props.playbackProgress ? styles.withSlider : ""
           }`}
         >
-          <div
-            className={`${styles.trackTitle} ${
-              props.brightBackground && styles.bright
-            }`}
-          >
-            {props.track.title}
-          </div>
-          <div
-            className={`${styles.trackArtist} ${
-              props.brightBackground && styles.bright
-            }`}
-          >
+          <div className={styles.trackTitle}>{props.track.title}</div>
+          <div className={styles.trackArtist}>
             {props.track.main_artists.join(", ")}
           </div>
         </div>
@@ -109,7 +99,6 @@ export default function TrackRow(props: Readonly<TrackRowProps>) {
           icon="more"
           variant="no-background"
           aria-label="Toggle track actions"
-          inverted={props.brightBackground}
           onClick={handleActionMenuToggle}
           active={showActionMenu}
         />

@@ -10,12 +10,12 @@ type ButtonProps = {
 >;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, variant = "success", ...props }, ref) => {
+  ({ children, variant, ...props }, ref) => {
     return (
       <button
         {...props}
         ref={ref}
-        className={`${styles.button} ${styles[variant]}`}
+        className={`${styles.button} ${variant ? styles[variant] : ""}`}
       >
         {children}
       </button>

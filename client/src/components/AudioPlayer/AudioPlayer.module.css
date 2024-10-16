@@ -4,33 +4,11 @@
   left: var(--spacing-xs);
   right: var(--spacing-xs);
   height: 6rem;
-  background-color: var(--primary-color);
+  background-color: var(--panel-color);
   border-radius: var(--border-radius);
   display: flex;
   gap: var(--spacing-sm);
   align-items: center;
   padding: var(--spacing-sm);
   box-sizing: border-box;
-}
-
-.trackInfo {
-  width: 12.5rem;
-}
-
-.trackTitle {
-  font-weight: 600;
-  color: var(--background-color);
-}
-
-.trackArtist {
-  color: var(--background-color);
-}
-
-.sliderContainer {
-  flex-grow: 1;
-  margin-right: var(--spacing-sm);
-}
-
-.slider {
-  width: 100%;
 }
