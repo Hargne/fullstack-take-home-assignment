@@ -22,7 +22,7 @@ export function TrackProvider({ children }: Readonly<PropsWithChildren<{}>>) {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   async function fetchTracks() {
-    const response = await fetch("http://0.0.0.0:8000/tracks/", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/tracks/`, {
       mode: "cors",
     });
     if (!response.ok) {

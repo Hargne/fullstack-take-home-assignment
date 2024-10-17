@@ -15,21 +15,24 @@ export default function CreatePlaylistForm(props: CreatePlaylistFormProps) {
   const playlistNameInputRef = useRef<HTMLInputElement>(null);
   const [newPlaylistName, setNewPlaylistName] = useState("");
 
-  function handleCreatePlaylist() {
-    if (!newPlaylistName || newPlaylistName.length < 1) {
-      return;
-    }
-    playlistContext.createPlaylist({
-      title: newPlaylistName,
-      description: "",
-      tracks: props.tracks ?? [],
-    });
-    setNewPlaylistName("");
-    if (playlistNameInputRef.current) {
-      playlistNameInputRef.current.blur();
-    }
-    if (props.onComplete) {
-      props.onComplete();
+  async function handleCreatePlaylist() {
+    try {
+      if (!newPlaylistName || newPlaylistName.length < 1) {
+        return;
+      }
+      await playlistContext.createPlaylist({
+        title: newPlaylistName,
+        tracks: props.tracks ?? [],
+      });
+      setNewPlaylistName("");
+      if (playlistNameInputRef.current) {
+        playlistNameInputRef.current.blur();
+      }
+      if (props.onComplete) {
+        props.onComplete();
+      }
+    } catch {
+      // TODO: Display error message
     }
   }
 

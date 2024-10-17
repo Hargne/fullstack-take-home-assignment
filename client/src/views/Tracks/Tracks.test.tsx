@@ -69,7 +69,6 @@ describe("Tracks View", () => {
         {
           id: "1",
           title: "A Playlist",
-          description: "",
           tracks: [],
         },
       ],

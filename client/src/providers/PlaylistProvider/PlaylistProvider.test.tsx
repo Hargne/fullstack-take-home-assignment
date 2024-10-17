@@ -13,7 +13,6 @@ describe("PlaylistProvider", () => {
     function newPlaylist() {
       playlistContext.createPlaylist({
         title: "New Playlist",
-        description: "This is a new playlist",
         tracks: [],
       });
     }

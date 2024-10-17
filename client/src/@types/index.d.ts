@@ -1,5 +1,3 @@
-export type ActionState = "INTITAL" | "LOADING" | "SUCCESS" | "ERROR";
-
 export type TrackProps = {
   id: string;
   title: string;
@@ -18,6 +16,5 @@ export type TrackProps = {
 export type PlaylistProps = {
   id: string;
   title: string;
-  description: string;
   tracks: Array<TrackProps>;
 };

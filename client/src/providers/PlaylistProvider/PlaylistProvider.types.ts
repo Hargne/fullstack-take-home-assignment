@@ -10,3 +10,16 @@ export type PlaylistContextProps = {
     trackId: TrackProps["id"]
   ) => void;
 };
+
+export type GetPlaylistsResponse = Array<PlaylistProps>;
+
+export type CreatePlaylistPayload = {
+  title: PlaylistProps["title"];
+  tracks: Array<TrackProps["id"]>;
+};
+
+export type CreatePlaylistResponse = PlaylistProps;
+
+export type AddTrackToPlaylistPayload = {
+  tracks: Array<TrackProps["id"]>;
+};
