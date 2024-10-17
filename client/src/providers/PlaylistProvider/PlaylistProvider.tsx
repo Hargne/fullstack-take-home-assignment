@@ -13,6 +13,7 @@ import {
   GetPlaylistsResponse,
   PlaylistContextProps,
 } from "./PlaylistProvider.types";
+import { API_URL } from "~/constants";
 
 export const PlaylistContext = createContext<PlaylistContextProps>(
   {} as PlaylistContextProps
@@ -24,7 +25,7 @@ export function PlaylistProvider({
   const [playlists, setPlaylists] = useState<Array<PlaylistProps>>([]);
 
   async function fetchPlaylists(): Promise<void> {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/playlists/`, {
+    const response = await fetch(`${API_URL}/playlists/`, {
       mode: "cors",
     });
     if (!response.ok) {
@@ -44,7 +45,7 @@ export function PlaylistProvider({
       title: data.title,
       tracks: data.tracks.map((track) => track.id),
     };
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/playlists/`, {
+    const response = await fetch(`${API_URL}/playlists/`, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -65,13 +66,10 @@ export function PlaylistProvider({
     // We apply the changes optimistically for a snappy UI
     setPlaylists(playlists.filter((playlist) => playlist.id !== id));
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/playlists/${id}`,
-        {
-          method: "DELETE",
-          mode: "cors",
-        }
-      );
+      const response = await fetch(`${API_URL}/playlists/${id}`, {
+        method: "DELETE",
+        mode: "cors",
+      });
       if (!response.ok) {
         throw new Error("Failed to delete playlist");
       }
@@ -106,7 +104,7 @@ export function PlaylistProvider({
         tracks: tracks.map((track) => track.id),
       };
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/playlists/${playlist.id}/tracks/`,
+        `${API_URL}/playlists/${playlist.id}/tracks/`,
         {
           method: "POST",
           mode: "cors",
@@ -156,7 +154,7 @@ export function PlaylistProvider({
         )
       );
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/playlists/${id}/tracks/${trackId}`,
+        `${API_URL}/playlists/${id}/tracks/${trackId}`,
         {
           method: "DELETE",
           mode: "cors",

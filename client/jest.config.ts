@@ -19,6 +19,11 @@ const config: Config = {
       "<rootDir>/__mocks__/fileMock.ts",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-  coveragePathIgnorePatterns: [".*types.*", ".*d.ts", "main.tsx"],
+  coveragePathIgnorePatterns: [
+    ".*types.*",
+    ".*d.ts",
+    "main.tsx",
+    "contstants.ts",
+  ],
 };
 export default config;

@@ -9,6 +9,7 @@ import {
 import { TrackProps } from "~/@types";
 import { GetTracksResponse, TrackContextProps } from "./TrackProvider.types";
 import AudioPlayer from "~/components/AudioPlayer/AudioPlayer";
+import { API_URL } from "~/constants";
 
 export const TrackContext = createContext<TrackContextProps>(
   {} as TrackContextProps
@@ -22,7 +23,7 @@ export function TrackProvider({ children }: Readonly<PropsWithChildren<{}>>) {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   async function fetchTracks() {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/tracks/`, {
+    const response = await fetch(`${API_URL}/tracks/`, {
       mode: "cors",
     });
     if (!response.ok) {

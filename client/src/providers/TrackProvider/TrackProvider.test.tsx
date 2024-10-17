@@ -5,6 +5,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { TrackProvider, TrackContext } from "./TrackProvider";
 import { mockedTrackList } from "~/__mocks__/track.mock";
 
+jest.mock("~/constants", () => ({
+  API_URL: "http://mocked-url",
+}));
+
 describe("TrackProvider", () => {
   const unmockedFetch = global.fetch;
   beforeAll(() => {

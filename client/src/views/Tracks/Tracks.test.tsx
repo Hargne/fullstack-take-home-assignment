@@ -7,6 +7,10 @@ import Tracks from "./Tracks";
 
 expect.extend(toHaveNoViolations);
 
+jest.mock("~/constants", () => ({
+  API_URL: "http://mocked-url",
+}));
+
 describe("Tracks View", () => {
   it("should list all tracks and make it possible for the user to play and pause a track", async () => {
     const contextValues = {

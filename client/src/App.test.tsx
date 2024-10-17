@@ -8,6 +8,10 @@ import { MockedPlaylistContext, MockedTrackContext } from "./testUtils";
 
 expect.extend(toHaveNoViolations);
 
+jest.mock("~/constants", () => ({
+  API_URL: "http://mocked-url",
+}));
+
 describe("App", () => {
   const renderScreen = () => {
     const playlistContext = {

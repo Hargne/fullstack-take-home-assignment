@@ -5,8 +5,45 @@ import { render, screen, waitFor, within } from "@testing-library/react";
 import { PlaylistContext, PlaylistProvider } from "./PlaylistProvider";
 import { PlaylistProps } from "~/@types";
 import { mockedTrackList } from "~/__mocks__/track.mock";
+import { mockedPlaylist } from "~/__mocks__/playlist.mock";
+
+jest.mock("~/constants", () => ({
+  API_URL: "http://mocked-url",
+}));
 
 describe("PlaylistProvider", () => {
+  const unmockedFetch = global.fetch;
+  beforeAll(() => {
+    global.fetch = jest.fn((_url: string, { method }: RequestInit) => {
+      if (method === "POST") {
+        return Promise.resolve({
+          ok: true,
+          json: () =>
+            Promise.resolve({
+              id:
+                Math.random().toString(36).substring(2, 9) +
+                Date.now().toString(36).toString(),
+              title: "New Playlist",
+              tracks: [],
+            }),
+        });
+      }
+      if (method === "DELETE") {
+        return Promise.resolve({
+          ok: true,
+        });
+      }
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockedPlaylist),
+      });
+    }) as jest.Mock;
+  });
+
+  afterAll(() => {
+    global.fetch = unmockedFetch;
+  });
+
   const TestComponent = () => {
     const playlistContext = useContext(PlaylistContext);
 

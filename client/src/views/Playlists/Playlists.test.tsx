@@ -7,6 +7,10 @@ import Playlists from "./Playlists";
 
 expect.extend(toHaveNoViolations);
 
+jest.mock("~/constants", () => ({
+  API_URL: "http://mocked-url",
+}));
+
 describe("Playlists View", () => {
   it("should list all playlists and their tracks", async () => {
     const playlistContextValues = {

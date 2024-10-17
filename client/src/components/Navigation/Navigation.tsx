@@ -14,7 +14,13 @@ export default function Navigation(props: NavigationProps) {
 
   return (
     <nav>
-      <img src={logo} className={styles.logo} alt="Logo" />
+      <img
+        src={logo}
+        className={styles.logo}
+        alt="Logo"
+        width={32}
+        height={39}
+      />
       <div className={styles.tablist} role="tablist">
         {Object.keys(allViews).map((key) => (
           <button
