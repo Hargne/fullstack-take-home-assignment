@@ -23,7 +23,7 @@ const config: Config = {
     ".*types.*",
     ".*d.ts",
     "main.tsx",
-    "contstants.ts",
+    "constants.ts",
   ],
 };
 export default config;
